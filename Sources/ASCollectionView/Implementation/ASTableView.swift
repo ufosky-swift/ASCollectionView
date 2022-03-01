@@ -75,6 +75,7 @@ public struct ASTableView<SectionID: Hashable>: UIViewControllerRepresentable, C
 		context.coordinator.updateContent(tableViewController.tableView, transaction: context.transaction)
 		context.coordinator.configureRefreshControl(for: tableViewController.tableView)
 		context.coordinator.setupKeyboardObservers()
+        context.coordinator.applyScrollPosition(animated: true)
 #if DEBUG
 		debugOnly_checkHasUniqueSections()
 #endif

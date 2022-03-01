@@ -91,6 +91,7 @@ public struct ASCollectionView<SectionID: Hashable>: UIViewControllerRepresentab
 		context.coordinator.updateLayout()
 		context.coordinator.configureRefreshControl(for: collectionViewController.collectionView)
 		context.coordinator.setupKeyboardObservers()
+        context.coordinator.applyScrollPosition(animated: true)
 #if DEBUG
 		debugOnly_checkHasUniqueSections()
 #endif
