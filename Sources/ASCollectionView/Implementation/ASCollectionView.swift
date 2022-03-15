@@ -329,6 +329,8 @@ public struct ASCollectionView<SectionID: Hashable>: UIViewControllerRepresentab
 					guard let supplementaryView = (cv.supplementaryView(forElementKind: kind, at: indexPath) as? ASCollectionViewSupplementaryView) else { continue }
 					guard let section = parent.sections[safe: indexPath.section] else { continue }
 
+					supplementaryView.collectionViewController = self.collectionViewController
+
 					// Get cachedHC
 					let supplementaryID = ASSupplementaryCellID(sectionIDHash: section.id.hashValue, supplementaryKind: kind)
 					// Update hostingController
